@@ -23,6 +23,8 @@ interface DiscardActionProps {
 type CombinedActionProps = DiscardActionProps & Action;
 
 export interface Props {
+  /** Hides the logo section */
+  hideLogo?: boolean;
   /** Accepts a string of content that will be rendered to the left of the actions */
   message?: string;
   /** Save or commit contextual save bar action with text defaulting to 'Save' */
