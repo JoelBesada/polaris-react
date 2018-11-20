@@ -167,6 +167,22 @@ describe('<ContextualSaveBar />', () => {
         '104px',
       );
     });
+
+    it('will not render the logo if explicitly told to hide it', () => {
+      const contextualSaveBar = mountWithAppProvider(
+        <ContextualSaveBar hideLogo />,
+        addPolarisContext({
+          logo: {
+            contextualSaveBarSource: './assets/monochrome_shopify.svg',
+            width: 200,
+          },
+          subscribe: () => {},
+          unsubscribe: () => {},
+        }),
+      );
+
+      expect(contextualSaveBar.find(Image).exists()).toBeFalsy();
+    });
   });
 });
 
